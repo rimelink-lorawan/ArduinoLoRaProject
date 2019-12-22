@@ -5,8 +5,8 @@
 lora LoRa;
 DFRobot_SHT20    sht20;
 
-#define MIN_PERIOD    5
-unsigned int period = 5;
+#define MIN_PERIOD    10
+unsigned int period = 10;
 
 #define DEBUG    0
 
