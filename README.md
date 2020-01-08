@@ -1,2 +1,2 @@
-# ArduinoLoRa-
-Arduino LoRa + Sensors(Actuators)
+# ArduinoLoRaProject
+ArduinoLoRa + Sensors(Actuators)
