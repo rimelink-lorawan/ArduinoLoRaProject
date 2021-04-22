@@ -12,7 +12,7 @@ SoftwareSerial gpsSerial(GPS_RX_PIN, GPS_TX_PIN);
 
 void setup()
 {
-  Serial.begin(115200);  // for LoRa Node
+  Serial.begin(57600);  // for LoRa Node
   gpsSerial.begin(9600);  // default Baud Rate of NEO-6M GPS module is 9600 
 }
 
