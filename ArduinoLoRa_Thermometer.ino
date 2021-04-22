@@ -43,7 +43,7 @@ void setup()
   pinMode(speakerPin, OUTPUT);
   pinMode(buttonPin, INPUT);
   digitalWrite(buttonPin, HIGH);  // pull up that would read LOW if pressed
-  Serial.begin(115200);  // for LoRa Node
+  Serial.begin(57600);  // for LoRa Node
   MLX90614.begin();
 #if DEBUG
   debugSerial.begin(9600); // add this to the setup function
