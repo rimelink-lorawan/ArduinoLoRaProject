@@ -16,9 +16,9 @@ SoftwareSerial debugSerial(8, 9);  // 8=RX, 9=TX
 void setup()
 {
   pinMode(buzzerPin, OUTPUT);
-  Serial.begin(115200);  // for LoRa Node
+  Serial.begin(57600);  // for LoRa Node
 #if DEBUG
-  debugSerial.begin(115200); // for debug
+  debugSerial.begin(9600); // for debug
 #endif
 }
 
