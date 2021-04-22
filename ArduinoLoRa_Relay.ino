@@ -13,13 +13,13 @@ SoftwareSerial debugSerial(8, 9);  // 8=RX, 9=TX
 
 void setup()
 {
-  Serial.begin(115200);  // for LoRa node
+  Serial.begin(57600);  // for LoRa node
   pinMode(wakeupPin, INPUT);
   pinMode(solenoidPin, OUTPUT);
   
 #if DEBUG
   pinMode(LED_BUILTIN, OUTPUT);
-  debugSerial.begin(115200); // start software serial port at 115200-8-N-1
+  debugSerial.begin(9600); // start software serial port at 9600-8-N-1
   debugSerial.println("debug begin");
 #endif
 
