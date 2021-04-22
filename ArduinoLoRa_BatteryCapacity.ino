@@ -63,9 +63,9 @@ int getBatteryCapacity(int VccVoltage)
 void setup() 
 {
   pinMode(ledPin, OUTPUT);  // declare LED as output
-  Serial.begin(115200);  // for LoRa Node
+  Serial.begin(57600);  // for LoRa Node
 #if DEBUG
-  debugSerial.begin(115200); // start software serial port at 115200-8-N-1
+  debugSerial.begin(9600); // start software serial port at 9600-8-N-1
 #endif  
 }
 
