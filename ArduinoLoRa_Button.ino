@@ -40,7 +40,7 @@ void setup()
   pinMode(ledPin, OUTPUT);
   pinMode(inputPin, INPUT);
   digitalWrite(inputPin, HIGH);  
-  Serial.begin(115200);
+  Serial.begin(57600);
 #if DEBUG
   debugSerial.begin(9600); // add this to the setup function
 #endif
