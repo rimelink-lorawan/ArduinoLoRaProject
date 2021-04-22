@@ -14,7 +14,7 @@ void setup()
 {
   pinMode(ledPin, OUTPUT);         // declare LED as output
   pinMode(inputPin, INPUT);        // declare pushbutton as input
-  Serial.begin(115200);            // for LoRa Node
+  Serial.begin(57600);            // for LoRa Node
 }
 
 void loop()
