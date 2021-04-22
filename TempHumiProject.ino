@@ -20,10 +20,10 @@ void setup()
     sht20.initSHT20(); // Init SHT20 Sensor
     delay(100);  // for SHT20 initialize itself
 
-    Serial.begin(115200); 
+    Serial.begin(57600); 
 
 #if DEBUG
-    debugSerial.begin(115200); // start software serial port at 115200-8-N-1
+    debugSerial.begin(9600); // start software serial port at 9600-8-N-1
 #endif
 }
 
