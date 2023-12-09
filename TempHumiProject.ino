@@ -10,21 +10,12 @@ unsigned int period = 10;
 
 #define DEBUG    0
 
-#if DEBUG
-#include <SoftwareSerial.h>
-SoftwareSerial debugSerial(8, 9);  // 8=RX, 9=TX
-#endif
-
 void setup()
 {
     sht20.initSHT20(); // Init SHT20 Sensor
     delay(100);  // for SHT20 initialize itself
 
     Serial.begin(57600); 
-
-#if DEBUG
-    debugSerial.begin(9600); // start software serial port at 9600-8-N-1
-#endif
 }
 
 void loop()
@@ -34,12 +25,13 @@ void loop()
     ParseCmd();
     
 #if DEBUG
-    debugSerial.println(period);
+    Serial.print("period: ");
+    Serial.print(period);
+    Serial.println(" seconds");
 #endif
  
     delay(period * 1000);
 }
-  
 
 void Sample() 
 {
@@ -48,9 +40,16 @@ void Sample()
     array[0] = sht20.readTemperature(); // Read Temperature
     array[1] = sht20.readHumidity(); // Read Humidity
   
-    LoRa.write(array, sizeof(array));
+#if DEBUG
+    Serial.print("Temperature: ");
+    Serial.print(array[0]);
+    Serial.print("°C, Humidity: ");
+    Serial.print(array[1]);
+    Serial.println("%");
+#else
+    LoRa.write(array, sizeof(array));	
+#endif
 }
-
 
 void ParseCmd()
 {
@@ -68,7 +67,6 @@ void ParseCmd()
         if (period < MIN_PERIOD) {
             period = MIN_PERIOD;
         }
-        
     }
 }
 
